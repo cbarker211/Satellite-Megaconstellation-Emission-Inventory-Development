@@ -1,0 +1,18 @@
+timestep(s):3600
+lat_res(deg):4
+lon_res(deg):5
+vertical_levels:47
+vertical_extent(km):80
+vertical_source:StateMet
+vertical_path:/home/ucfacb0/Scratch/StateMet/
+
+########################
+# Enter the simulation settings here.
+# When setting lon_res, do not add a decimal place for resolutions of 2x2.5 (i.e 25).
+# The vertical_extent is designed for a top altitude of 80km, and cannot be above 100km. Higher altitudes will require modifications to the source code.
+# The vertical_source can be set to:
+#     - StateMet - This uses the Met_BXHEIGHT variable in the StateMet diagnostic output from GEOSChem to define the vertical layers. 
+#                - Set vertical_path to the StateMet folder e.g. /<your_home_directory>/StateMet. 
+#                - This folder should contain folders called '<lat_res>x<lon_res>/<vertical_levels>/<year>' containing all StateMet files.
+#     - custom   - This loads in a csv file which contains the lower, middle, and upper altitudes of each vertical layer in km.
+#                - Set vertical_path to the name of the file, which should be in the input_files folder, e.g. "geoschem_vertical_grid_47.csv"
